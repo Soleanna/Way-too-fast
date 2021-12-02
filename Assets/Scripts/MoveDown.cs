@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveDown : MonoBehaviour
 {
-    private float speed = 15;
+    public static float speed = 15;
     // Start is called before the first frame update
     void Start()
     {
