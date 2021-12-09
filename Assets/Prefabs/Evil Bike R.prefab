@@ -968,10 +968,10 @@ GameObject:
   - component: {fileID: 4274461482280370788}
   - component: {fileID: 4595181249317041099}
   - component: {fileID: 5257492126005419043}
-  - component: {fileID: 3999357101661277568}
   - component: {fileID: 4382337360830087020}
+  - component: {fileID: 6128135296902375973}
   m_Layer: 0
-  m_Name: Evil Bike
+  m_Name: Evil Bike R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1067,18 +1067,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3999357101661277568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5885938226774560523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e2ce28ab8703ac41b9f81f70da1060b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4382337360830087020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1089,6 +1077,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55274318d95e23143904d1648f1a3a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6128135296902375973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5885938226774560523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601ce91008f678448850e8e41389b658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6643433905118002508

@@ -5,24 +5,40 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] vehiclePrefabs;
+    public GameObject[] vehiclePrefabsRight;
     private float spawnPosZ = 100;
+
+    private float startDelay = 1;
+    private float spawnInterval = 1.5f;
+    private float spawnIntervalR = 3f;
+
+    public Transform RightSpawner;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Car Spawning
+        InvokeRepeating("LeftSpawnRandomCar", startDelay, spawnInterval);
+        InvokeRepeating("RightSpawnRandomCar", startDelay, spawnIntervalR);
     }
 
     // Update is called once per frame
     void Update()
     {
-        // create w code lesson 2.3 to finish this
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            Vector3 spawnPos = new Vector3(Random.Range(-7, 0), 0, spawnPosZ);
-            int vehicleIndex = Random.Range(0, vehiclePrefabs.Length);
-            Instantiate(vehiclePrefabs[vehicleIndex], spawnPos, vehiclePrefabs[vehicleIndex].transform.rotation);
-        }
+   
+    }
+    
+    // Car Spawning Methods
+    void LeftSpawnRandomCar()
+    {
+        Vector3 spawnPos = new Vector3(Random.Range(-7, -1), 1.25f, spawnPosZ);
+        int vehicleIndex = Random.Range(0, vehiclePrefabs.Length);
+        Instantiate(vehiclePrefabs[vehicleIndex], spawnPos, vehiclePrefabs[vehicleIndex].transform.rotation);
+    }
+    void RightSpawnRandomCar()
+    {
+        Vector3 spawnPos = new Vector3(Random.Range(7, 1), 1.25f, spawnPosZ);
+        int vehicleIndex = Random.Range(0, vehiclePrefabsRight.Length);
+        Instantiate(vehiclePrefabsRight[vehicleIndex], spawnPos, RightSpawner.rotation);
     }
 }

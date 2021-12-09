@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 6698088370315062597}
   - component: {fileID: 8654976320326167283}
   - component: {fileID: 531984873085964032}
+  - component: {fileID: 4231371895249842229}
+  - component: {fileID: 4973231054509918411}
   m_Layer: 0
   m_Name: Evil Police
   m_TagString: Untagged
@@ -103,6 +105,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4231371895249842229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119369413810305627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e2ce28ab8703ac41b9f81f70da1060b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4973231054509918411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119369413810305627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55274318d95e23143904d1648f1a3a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &638138464189813163
 GameObject:
   m_ObjectHideFlags: 0
