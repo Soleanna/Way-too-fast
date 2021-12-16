@@ -18,8 +18,10 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         // Car Spawning
-        InvokeRepeating("LeftSpawnRandomCar", startDelay, spawnInterval);
-        InvokeRepeating("RightSpawnRandomCar", startDelay, spawnIntervalR);
+        StartCoroutine("LeftSpawnRandomCar");
+        StartCoroutine("RightSpawnRandomCar");
+       // InvokeRepeating("LeftSpawnRandomCar", startDelay, spawnInterval);
+       // InvokeRepeating("RightSpawnRandomCar", startDelay, spawnIntervalR);
     }
 
     // Update is called once per frame
@@ -29,16 +31,36 @@ public class SpawnManager : MonoBehaviour
     }
     
     // Car Spawning Methods
-    void LeftSpawnRandomCar()
+    /*void LeftSpawnRandomCar()
     {
         Vector3 spawnPos = new Vector3(Random.Range(-7, -1), 1.25f, spawnPosZ);
         int vehicleIndex = Random.Range(0, vehiclePrefabs.Length);
         Instantiate(vehiclePrefabs[vehicleIndex], spawnPos, vehiclePrefabs[vehicleIndex].transform.rotation);
-    }
-    void RightSpawnRandomCar()
+    }*/
+    /*void RightSpawnRandomCar()
     {
         Vector3 spawnPos = new Vector3(Random.Range(7, 1), 1.25f, spawnPosZ);
         int vehicleIndex = Random.Range(0, vehiclePrefabsRight.Length);
         Instantiate(vehiclePrefabsRight[vehicleIndex], spawnPos, RightSpawner.rotation);
+    }*/
+    IEnumerator LeftSpawnRandomCar()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(spawnInterval);
+            Vector3 spawnPos = new Vector3(Random.Range(-7, -1), 1.25f, spawnPosZ);
+            int vehicleIndex = Random.Range(0, vehiclePrefabs.Length);
+            Instantiate(vehiclePrefabs[vehicleIndex], spawnPos, vehiclePrefabs[vehicleIndex].transform.rotation);
+        }
+    }
+    IEnumerator RightSpawnRandomCar()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(spawnIntervalR);
+            Vector3 spawnPos = new Vector3(Random.Range(7, 1), 1.25f, spawnPosZ);
+            int vehicleIndex = Random.Range(0, vehiclePrefabsRight.Length);
+            Instantiate(vehiclePrefabsRight[vehicleIndex], spawnPos, RightSpawner.rotation);
+        }
     }
 }

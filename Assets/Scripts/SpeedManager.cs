@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpeedManager : MonoBehaviour
 {
     public float speedBump = 0.02f;
-    public float spawnBump = .99f;
+    public float spawnBump = 2f;
 
     // Start is called before the first frame update
     void Start()
