@@ -9,8 +9,8 @@ public class SpawnManager : MonoBehaviour
     private float spawnPosZ = 100;
 
     private float startDelay = 1;
-    private float spawnInterval = 1.5f;
-    private float spawnIntervalR = 3f;
+    public static float spawnInterval = 1.5f;
+    public static float spawnIntervalR = 3f;
 
     public Transform RightSpawner;
 
