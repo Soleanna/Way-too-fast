@@ -6,11 +6,13 @@ public class PlayerController : MonoBehaviour
 {
     public float horizontalInput;
     public float speed = 10.0f;
-
+    private AudioSource au;
+    private GameManager GM;
     // Start is called before the first frame update
     void Start()
     {
-        
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
+        au = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,4 +31,15 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(7, transform.position.y, transform.position.z);
         }
     }
+
+    IEnumerator MusicCrazy()
+    {
+        yield return new WaitForSeconds(1);
+        if (GM.isGameActive)
+        {
+            au.pitch += 0.1f;
+        }
+        StartCoroutine(MusicCrazy());
+    }
+
 }

@@ -5,11 +5,15 @@ using UnityEngine;
 public class SpeedManager : MonoBehaviour
 {
     public float speedBump = 0.02f;
-    public float spawnBump = 2f;
+    public float spawnBump = 0.5f;
+
+    private GameManager GM;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         StartCoroutine("SpeedUp");
         StartCoroutine("SpawnUp");
     }
@@ -22,22 +26,24 @@ public class SpeedManager : MonoBehaviour
 
     IEnumerator SpeedUp()
     {
-        while (true)
+        yield return new WaitForSeconds(1);
+        if (GM.isGameActive)
         {
-            yield return new WaitForSeconds(1);
             LeftsideMovement.speed += speedBump;
             RightsideMovement.rSpeed += speedBump;
             MoveDown.gSpeed += speedBump;
+            Debug.Log(speedBump);
         }
+        StartCoroutine(SpeedUp());
     }
     IEnumerator SpawnUp()
     {
-        while (true)
-        {
-            yield return new WaitForSeconds(1);
-            SpawnManager.spawnInterval *= spawnBump;
-            SpawnManager.spawnIntervalR *= spawnBump;
-            Debug.Log(SpawnManager.spawnInterval);
+        yield return new WaitForSeconds(10);
+        if (GM.isGameActive)
+        {           
+            SpawnManager.spawnInterval -= 1 / spawnBump;
+            SpawnManager.spawnIntervalR -= 1 / spawnBump;
         }
+        StartCoroutine(SpawnUp());
     }
 }
